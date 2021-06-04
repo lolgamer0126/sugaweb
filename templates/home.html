@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<head>
+
+{% block title %}Нүүр{% endblock title %}
+
+</head>
+
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+<p>hi {{user.username}} :></p>
+<p><a href = "{% url 'logout' %}">LOGOUT</a></p>
+
+{% else %}
+<p><a href = "{% url 'sign' %}">LOGIN</a></p>
+
+{% endif %}
+    <div>
+        <h1> hi </h1>
+    </div>
+{% endblock content %}
+
+</body>
