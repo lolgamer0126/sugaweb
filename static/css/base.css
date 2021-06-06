@@ -77,7 +77,7 @@ label {
   pointer-events: none;
   font-size: 22px;
 }
-label .req {
+label .req {  
   margin: 2px;
   color: #1da1f2;
 }
