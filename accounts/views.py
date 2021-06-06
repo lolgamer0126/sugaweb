@@ -23,10 +23,12 @@ def post(request):
             password1 = request.POST['password1']
             email = request.POST['email']
             name = request.POST["username"]
-            try:
-                e = CustomUser.objects.get(email=email)
-                return render(request, 'registration/sign.html', {'error': 'Email has already been taken'})
-            except User.DoesNotExist:
+            if CustomUser.objects.filter(email=email).exists():
+                return HttpResponse('email already taken!')
+
+            if CustomUser.objects.filter(username = name).exists():
+                return HttpResponse('username already taken!')
+            else:
                 if password != password1:
                     return render(request, 'registration/sign.html', {"error': 'Password isn't same"})
                 if len(password) < 8:
