@@ -25,7 +25,7 @@ def post(request):
             name = request.POST["username"]
             if CustomUser.objects.filter(email=email).exists():
                 return HttpResponse('email already taken!')
-
+            
             if CustomUser.objects.filter(username = name).exists():
                 return HttpResponse('username already taken!')
             else:

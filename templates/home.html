@@ -18,6 +18,12 @@
     <div>
         <h1> hi </h1>
     </div>
+
+{% for post in object_list %}
+<h1>{{post.title}}</h1>
+<h3>{{post.body}}</h3>
+{% endfor %}
+
 {% endblock content %}
 
 </body>
