@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="article-entry">
+<h2>{{ object.title }}</h2>
+<p>{{ object.body }}</p>
+</div>
+<p>Back to <a href="{% url 'home' %}">Home</a>.</p>
+{% endblock content %}
